@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Declaration vs Expression</title>
+  </head>
+  <body>
+    <!-- 
+
+        -> function declaration
+        + lebih fleksibel
+            - karena konsep hoisting
+        + mudah dipahami
+
+
+        -> function expression
+        + function Expression harus didefinisikan terlebih dahulu sebelum dipanggil
+        + lebih powerfull
+            - sebagai closure
+            - sebagai argumen untuk function lain
+     -->
+
+     <script>
+        function name(params) {
+            console.log(params);
+        }
+
+        var fullName = function(params){
+            console.log(params);
+        }
+
+        name('Ferry');
+        fullName('Ferry Agus'); 
+     </script>
+  </body>
+</html>

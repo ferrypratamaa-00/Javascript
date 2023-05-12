@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+
+        var mahasiswa = {
+            nama : 'Ferry Agus Pratama',
+            lulus : true,
+            IPSemester : [2.9,3.1,3.25,2.88,3.4],
+            IPKumulatif : function(){
+                var total = 0;
+                var ips = this.IPSemester;
+                for (let i = 0; i < ips.length; i++) {
+                    total += ips[i];
+                    
+                }
+                return total/ips.length;
+            }
+        }
+        console.log(mahasiswa.IPKumulatif());
+
+        var mhs = {};
+        mhs = {
+            nama : 'Ferry Agus Pratama',
+            umur : 22,
+            ips : [3.0, 2.8,3.5],
+            alamat : {
+                jalan : "Jln abc No. 123",
+                kota : "Problinggo",
+                provinsi: "Jawa Timur"
+            }
+        };
+        console.log(mhs.nama);
+        console.log(mhs.umur);
+        console.log(mhs.ips[1]);
+        console.log(mhs.alamat.kota);
+
+        </script>
+</body>
+</html>

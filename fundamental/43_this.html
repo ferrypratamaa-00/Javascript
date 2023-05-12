@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This</title>
+  </head>
+  <body>
+    <script>
+      // membuat object
+      // 1. function declaration
+
+      function halo() {
+        console.log("halo");
+      }
+      halo();
+
+      // 2. object literal
+      var obj = {};
+      obj.halo = () => console.log("halo lagi");
+      obj.halo();
+
+      // 3. constructor
+      function hallo() {
+        console.log("halo lagi halo lagi");
+      }
+      new hallo();
+      console.log("=======================");
+
+      //this, keyword special yang disisipkan disetiap function
+      //properti atau method dari object window
+
+      // 1. function declaration
+
+      function halo1() {
+        console.log(this);
+        console.log("halo");
+      }
+      this.halo1();
+      //   this mengembalikan object global
+
+      // 2. object literal
+      var obj = { a: 10, nama: "ferry" };
+      obj.halo = function () {
+        console.log(this);
+        console.log("halo lagi");
+      };
+      obj.halo();
+    //   this mengembalikan object yang bersangkutan
+
+
+      // 3. constructor
+      function hallo() {
+        console.log(this);
+        console.log("halo lagi halo lagi");
+      }
+
+      var helloobj = new hallo();
+      var helloobj1 = new hallo();
+
+    //   this mengembalikan object yang baru dibuat
+
+    </script>
+  </body>
+</html>

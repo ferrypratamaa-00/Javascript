@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foreach dan Map</title>
+  </head>
+  <body>
+    <script>
+      // 1. forEach
+      var angka = [1, 8, 4, 6, 3, 5, 7, 10, 60, 2, 20, 30, 50];
+      angka.forEach(function (e) {
+        console.log(e);
+      });
+
+      var nama = ["Ferry", "Agus", "Pratama"];
+      nama.forEach(function (e, i) {
+        console.log("Mahasiswa ke-" + (i + 1) + " adalah : " + e);
+      });
+
+      //   2. Map, mengembalikan array
+      var angka2 = angka.map(function (e) {
+        return e * 2;
+      });
+      console.log(angka2);
+
+      //   3. short
+      console.log(angka);
+      console.log(angka.sort());
+      console.log(
+        angka.sort(function (a, b) {
+          return a - b;
+        })
+      );
+    </script>
+  </body>
+</html>

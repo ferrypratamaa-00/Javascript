@@ -1,0 +1,131 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kasir 2</title>
+  </head>
+  <body>
+    <h2>Daftar Menu :</h2>
+    <ul id="list-menu1"></ul>
+    <select id="list-menu">
+      <option value="null">Pilih Menu</option>
+    </select>
+    <!-- <input type="text" placeholder="Masukan Menu" name="menu" id="menu" /> -->
+    <input type="number" name="jmlMenu" id="jmlMenu" min="1" value="1" />
+    <button type="button" id="simpan" onclick="simpan()">Simpan</button>
+
+    <div id="tabel-belanja" style="margin-top: 10px"></div>
+    <script>
+      var products,
+        lagi,
+        keranjang = [],
+        keranjangSementara = {},
+        btnSimpan,
+        menu,
+        jmlMenu,
+        subTotal = 0,
+        no = 0,
+        kp = [];
+
+      products = [
+        {
+          nama: "Pisang",
+          harga: 1000,
+        },
+        {
+          nama: "Nasi",
+          harga: 2000,
+        },
+        {
+          nama: "Teh",
+          harga: 500,
+        },
+      ];
+      //   menampilkan produk
+      for (let index = 0; index < products.length; index++) {
+        var li = document.createElement("option");
+        var listMenu = document.createTextNode(
+          +index +
+            1 +
+            ". " +
+            products[index].nama +
+            " - Rp. " +
+            products[index].harga
+        );
+        document.crea;
+        li.appendChild(listMenu);
+        li.setAttribute(
+          "value",
+          products[index].nama.toLowerCase() + "#" + products[index].harga
+        );
+
+        document.getElementById("list-menu").appendChild(li);
+      }
+
+      var table = document.createElement("table");
+      table.setAttribute("border", 1);
+
+      var header = table.createTHead();
+      var headerRow = header.insertRow(-1);
+      var noHeader = headerRow.insertCell(0);
+      var namaHeader = headerRow.insertCell(1);
+      var jumlahHeader = headerRow.insertCell(2);
+      var subTotalHeader = headerRow.insertCell(3);
+
+      var footer = table.createTFoot();
+      var footerRow = footer.insertRow(-1);
+      var noFooter = footerRow.insertCell(0);
+      var namaFooter = footerRow.insertCell(1);
+      var jumlahFooter = footerRow.insertCell(2);
+      var subTotalFooter = footerRow.insertCell(3);
+
+      noHeader.innerHTML = "No";
+      namaHeader.innerHTML = "Nama";
+      jumlahHeader.innerHTML = "Jumlah";
+      subTotalHeader.innerHTML = "Harga";
+
+      noFooter.innerHTML = "No";
+      namaFooter.innerHTML = "Nama";
+      jumlahFooter.innerHTML = "Jumlah";
+      subTotalFooter.innerHTML = "Harga";
+      document.getElementById("tabel-belanja").appendChild(table);
+
+      function simpan() {
+        let pilihan;
+        let passingMenu = [];
+
+        menu = document.getElementById("list-menu").value;
+        jmlMenu = document.getElementById("jmlMenu").value;
+        passingMenu = menu.split("#");
+        subTotal = passingMenu[1] * jmlMenu;
+        kp = keranjangPelanggan(passingMenu[0], jmlMenu, subTotal);
+
+        document.getElementById("jmlMenu").value = 1;
+
+        var row = table.insertRow(table.rows.length - 1);
+        var noCell = row.insertCell(0);
+        var namaCell = row.insertCell(1);
+        var jumlahCell = row.insertCell(2);
+        var subTotalCell = row.insertCell(3);
+        no += 1;
+        // noCell.innerHTML = no;
+        namaCell.innerHTML = passingMenu[0];
+        jumlahCell.innerHTML = jmlMenu;
+        subTotalCell.innerHTML = "Rp. " + subTotal;
+        footerRows = footer.rows;
+        for (let i = 1; i < footerRows.length; i++) {
+          noCell.innerHTML = i;
+        }
+      }
+
+      function keranjangPelanggan(passingMenu, jmlMenu, subTotal) {
+        keranjangSementara.nama = passingMenu;
+        keranjangSementara.jmlMenu = jmlMenu;
+        keranjangSementara.subTotal = subTotal;
+        keranjang.push(keranjangSementara);
+        return keranjang;
+      }
+    </script>
+  </body>
+</html>

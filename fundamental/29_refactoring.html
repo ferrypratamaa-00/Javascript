@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refactoring</title>
+  </head>
+  <body>
+    <!-- sebuah proses mengubah kode agar lebih baik tanpa mengubah fungsionalitas -->
+
+    <script>
+      // without refactoring
+
+      function jumlahkanDuaBilanganWioutRefactoring(a, b) {
+        var a;
+        var b;
+        var c;
+
+        c = a + b;
+        return c;
+      }
+
+      //with refactoring
+
+      function jumlahkanDuaBilanganWithRefactoring(a, b) {
+        return a + b;
+      }
+
+      console.log(jumlahkanDuaBilanganWioutRefactoring(1,2));
+      console.log(jumlahkanDuaBilanganWithRefactoring(2,2));
+    </script>
+  </body>
+</html>

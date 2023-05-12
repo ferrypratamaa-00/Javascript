@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <!-- Scope ada dua : block scope dan function scope -->
+<script>
+    // global scope / window scope
+    var a = 1;
+
+    // function scope
+    function tes(){
+        var b =2;
+    }
+    tes();
+    // console.log(b); error
+
+    var c = 10;
+
+    function testing(){
+        //  name conflict
+        var c = 2;
+    }
+    testing();
+    console.log(c);
+
+</script>
+</body>
+</html>

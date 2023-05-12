@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Manipulation</title>
+  </head>
+  <body>
+    <script>
+      // 1. menambah isi array
+      var arr = [];
+      arr[0] = "satu";
+      arr[1] = "dua";
+      arr[2] = "tiga";
+      arr[3] = "empat";
+
+      console.log(arr);
+
+      // 2. menghapus isi array
+      arr[1] = undefined;
+      console.log(arr);
+
+      // 3. menampilkan isi array
+      arr[1] = "dua (ubah)";
+      for (let index = 0; index < arr.length; index++) {
+        console.log("index ke " + index + " : " + arr[index]);
+      }
+
+      // method pada array
+      //   1. join, merubah isi array menjadi stirng
+      console.log(arr.join());
+      console.log(arr.join(" - "));
+      // 2. push & pop,
+      //      -> push menambah elemen array di akhir array
+      //      -> pop menghapus element array terakhir
+      arr.push("lima"); // menambah
+      arr.push("enam", "tujuh"); // menambah
+      console.log(arr);
+      arr.pop(); // menghilangkan
+      console.log(arr);
+      // 3. unshift & shift
+      //          -> unshift untuk menambah di awal array
+      //          -> shift untuk menghapus di awal array
+
+      arr.unshift("nol"); // menambah diawal
+      console.log(arr);
+      arr.shift(); // menghapus diawal
+      console.log(arr);
+      // 4. slice dan splice
+    //   -> splice
+    //   splice untuk menyisipkan ditengah tengah
+    arr.splice(1,0,'satu ganda');
+    console.log(arr);
+    arr.splice(0,3,'satu', 'dua');
+    console.log(arr);
+    // ->slice
+    //  slice digunakan untuk memisahkan dan menjadikan array baru
+    var arr2 = arr.slice(1,3);
+    console.log(arr2);
+    console.log(arr);
+    </script>
+  </body>
+</html>

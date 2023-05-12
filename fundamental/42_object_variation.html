@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Variation</title>
+  </head>
+  <body>
+    <script>
+      // 1. Object Literal
+      var mhs1 = {
+        nama: "Ferry Agus",
+        nik: "02323203",
+        email: "ferryaguspratama@example.com",
+        jurusan: "Teknik Elektro",
+      };
+
+      var mhs2 = {
+        nama: "Ferry Agus Pratama",
+        nik: "02323203",
+        email: "ferryaguspratama@example.com",
+        jurusan: "Teknik Elektro",
+      };
+
+      // 2. function declaration
+
+      function buatObjectMahasiswa(nama, nik, email, jurusan) {
+        var mhs = {};
+        mhs.nama = nama;
+        mhs.nik = nik;
+        mhs.email = email;
+        mhs.jurusan = jurusan;
+        return mhs;
+      }
+      var mhs3 = buatObjectMahasiswa(
+        "Ferry Agus Pratama",
+        "0239238",
+        "ferry@example.com",
+        "Teknik Elektro"
+      );
+      var mhs4 = buatObjectMahasiswa(
+        "Ferry Agus Pratama Lagi",
+        "0239238",
+        "ferry@example.com",
+        "Teknik Elektro"
+      );
+
+      //3. constructor
+      function Mahasiswa(nama, nik, email, jurusan) {
+        this.nama = nama;
+        this.nik = nik;
+        this.email = email;
+        this.jurusan = jurusan;
+      }
+      var mhs5 = new Mahasiswa(
+        "Ferry Pratama",
+        "0239238",
+        "ferrypratama@example.com",
+        "Teknik Elektro"
+      );
+    </script>
+  </body>
+</html>

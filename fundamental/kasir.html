@@ -1,0 +1,135 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kasir</title>
+  </head>
+  <body>
+    <!-- 
+1. Pilih Produk
+2. tentukan jumlah produk
+3. pilih ulang atau tidak
+4. checkout
+5. nampilin nota
+
+langkah :
+1. buat list produk
+2. 
+     -->
+    <script>
+      var produk = [
+        {
+          nama: "nasi",
+          harga: 1000,
+        },
+        {
+          nama: "teh",
+          harga: 500,
+        },
+        {
+          nama: "kopi",
+          harga: 550,
+        },
+        {
+          nama: "roti bakar",
+          harga: 800,
+        },
+        {
+          nama: "pisang",
+          harga: 200,
+        },
+      ];
+
+      var lagi = true,
+        pilihanUser = [],
+        subTotal = 0,
+        sisa = 0,
+        bayar = 0;
+
+      while (lagi) {
+        var pilihProdukFromUser = prompt(
+          "Pilih Produk yang ingin kamu beli : \n1. nasi - Rp. 1000 \n2. teh - Rp. 500 \n3. kopi - Rp. 550 \n4. roti - Rp. 800 \n5. pisang - Rp. 200 \n"
+        );
+
+        pilihanUser.push(pilihProdukFromUser);
+
+        var lagi = confirm("Mau pilih produk lain ?");
+      }
+
+      for (const value of produk) {
+        for (let i = 0; i < pilihanUser.length; i++) {
+          if (pilihanUser[i] == value.nama) {
+            subTotal += value.harga;
+          }
+        }
+      }
+
+      if (lagi == false) {
+        lagi = true;
+        while (lagi) {
+          bayar = prompt(
+            "Kamu memilih " +
+              pilihanUser +
+              " maka total pembayaran yang harus kamu keluarkan adalah : Rp. " +
+              subTotal +
+              "\n silahkan masukan uang pembayaran : "
+          );
+          sisa = bayar - subTotal;
+          if (sisa >= 0) {
+            alert(
+              "Transaksi berhasil diselesaikan \npembayaran Rp. " +
+                bayar +
+                " dengan total tagihan Rp. " +
+                subTotal +
+                " maka kembalian tersisa : Rp. " +
+                sisa
+            );
+            alert("Terimakasih :)");
+            lagi = false;
+          } else {
+            alert("uang anda kurang, silahkan masukan ulang uang pembayaran");
+          }
+        }
+      }
+
+      //   for (let i = 0; i < produk.length; i++) {
+      //     if (
+      //       pilihProdukFromUser == produk[i].no ||
+      //       pilihProdukFromUser.toLocaleLowerCase() == produk[i].nama
+      //     ) {
+      //       alert(
+      //         "produk yang kamu ambil adalah " +
+      //           pilihProdukFromUser +
+      //           " Maka kamu harus membayar Rp. " +
+      //           produk[i].harga
+      //       );
+      //     }else{
+      //         alert('Mohon maaf produk tidak tersedia :(');
+      //         i = produk.length;
+      //     }
+      //   }
+
+      //   var pilihProdukFromUser = prompt(
+      //     "Pilih Produk yang ingin kamu beli : \n1. nasi \n2. teh \n3. kopi"
+      //   );
+
+      //   for (let i = 0; i < produk.length; i++) {
+      //     if (
+      //       pilihProdukFromUser == produk[i].no ||
+      //       pilihProdukFromUser.toLocaleLowerCase() == produk[i].nama
+      //     ) {
+      //       alert(
+      //         "produk yang kamu ambil adalah " +
+      //           pilihProdukFromUser +
+      //           " Maka kamu harus membayar Rp. " +
+      //           produk[i].harga
+      //       );
+      //     }else{
+      //         alert('Mohon maaf produk tidak tersedia :(');
+      //         i = produk.length;
+      //     }
+      //   }
+    </script>
+  </body>
+</html>
