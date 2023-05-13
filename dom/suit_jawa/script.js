@@ -34,7 +34,6 @@ gajah.addEventListener("click", function () {
   }
 });
 
-
 orang.addEventListener("click", function () {
   if (pilihanComputer() == "orang") {
     quesComp.removeAttribute("src");
@@ -62,7 +61,6 @@ orang.addEventListener("click", function () {
     info.innerHTML = "Menang!";
   }
 });
-
 
 semut.addEventListener("click", function () {
   if (pilihanComputer() == "semut") {
