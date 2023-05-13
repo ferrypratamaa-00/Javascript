@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain dengan Warna</title>
+    <style>
+        body{
+            text-align: center;
+            height: 100vh;
+        }
+        .light-yellow{
+            background-color: lightgoldenrodyellow;
+        }
+        .kotak{
+            height: 30px;
+            width: 30px;
+            margin:10px auto;
+        }
+        .merah{
+            background-color: red;
+        } 
+        .hijau{
+            background-color: green;
+        }
+        .biru{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+   <h1> bermain dengan warna </h1>
+   <button type="button" id="btnUbah">berubah</button>
+   <br><br>
+   <div class="kotak merah"></div>
+   <input type="range" name="smerah" id="smerah" min="1" max="225">
+   <div class="kotak hijau"></div>
+   <input type="range" name="shijau" id="shijau">
+   <div class="kotak biru"></div>
+   <input type="range" name="sbiru" id="sbiru">
+    <script src="8_dom_bermain_dengan_warna.js"></script>
+</body>
+</html>
