@@ -15,6 +15,6 @@ container.addEventListener("click", function (e) {
 
     e.target.classList.add("active");
     old = e.target;
-    // e.target.classList.add('active');
+    // e.target.classList.add('activee');
   }
 });
